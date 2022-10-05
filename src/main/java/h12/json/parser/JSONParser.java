@@ -28,7 +28,7 @@ public class JSONParser {
      * @throws JSONParseException If an exception occurs while trying to parse the contents of the JSON file.
      */
     public JSONElement parse() throws JSONParseException {
-        return crash();
+        return crash(); //TODO H4.1
     }
 
 
