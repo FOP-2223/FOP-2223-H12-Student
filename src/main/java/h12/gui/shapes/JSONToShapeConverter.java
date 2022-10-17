@@ -23,7 +23,7 @@ public class JSONToShapeConverter {
      * @see MyPolygon#toJSON() For the expected content of the {@link JSONElement}
      */
     public MyPolygon polygonFromJSON(JSONElement element) throws JSONParseException {
-        return crash(); //TODO H5.2
+        return crash(); //TODO H5.2 - remove if implemented
     }
 
     /**
@@ -96,5 +96,4 @@ public class JSONToShapeConverter {
             throw new JSONParseException("Invalid MyShape format!");
         }
     }
-
 }

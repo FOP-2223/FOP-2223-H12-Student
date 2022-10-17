@@ -31,7 +31,7 @@ public abstract class FileOperationHandler {
      * @return {@code true}, if this file name is valid. Otherwise {@code false}.
      */
     public boolean checkFileName(String fileName) {
-        return crash(); //TODO H5.3
+        return crash(); //TODO H5.3 - remove if implemented
     }
 
     /**

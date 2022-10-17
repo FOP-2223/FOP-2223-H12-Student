@@ -48,7 +48,7 @@ public class LookaheadReader extends Reader {
      * @throws IOException If reading from the underlying reader causes an {@link IOException}.
      */
     public int read() throws IOException {
-        return crash(); //TODO H1.2
+        return crash(); //TODO H1.2 - remove if implemented
     }
 
     /**
@@ -58,7 +58,7 @@ public class LookaheadReader extends Reader {
      * @throws IOException If reading from the underlying Reader causes an {@link IOException}.
      */
     public int peek() throws IOException {
-        return crash(); //TODO H1.2
+        return crash(); //TODO H1.2 - remove if implemented
     }
 
     /**

@@ -43,7 +43,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      * @throws IOException If an {@link IOException} occurs while reading the contents of the reader.
      */
     public void skipIndentation() throws IOException {
-        crash(); //TODO H3.1
+        crash(); //TODO H3.1 - remove if implemented
     }
 
     /**
@@ -54,7 +54,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      * @see #skipIndentation()
      */
     public int acceptIt() throws IOException {
-        return crash(); //TODO H3.1
+        return crash(); //TODO H3.1 - remove if implemented
     }
 
     /**
@@ -67,7 +67,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      * @see #skipIndentation()
      */
     public void accept(char expected) throws IOException, UnexpectedCharacterException, BadFileEndingException {
-        crash(); //TODO H3.1
+        crash(); //TODO H3.1 - remove if implemented
     }
 
     /**
@@ -78,7 +78,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      * @see LookaheadReader
      */
     public int peek() throws IOException {
-        return crash(); //TODO H3.1
+        return crash(); //TODO H3.1 - remove if implemented
     }
 
     /**
@@ -89,7 +89,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      */
     @Override
     public void checkEndOfFile() throws IOException, BadFileEndingException {
-        crash(); //TODO H3.1
+        crash(); //TODO H3.1 - remove if implemented
     }
 
     /**
@@ -103,7 +103,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      * @throws BadFileEndingException If the end of the File is reached before the {@link Predicate} returned true.
      */
     public String readUntil(Predicate<Integer> stopPred) throws IOException, BadFileEndingException {
-        return crash(); //TODO H3.1
+        return crash(); //TODO H3.1 - remove if implemented
     }
 
     /**
@@ -115,7 +115,7 @@ public class JSONElementNodeParser implements JSONElementParser {
      */
     @Override
     public JSONElement parse() throws IOException {
-        return crash(); //TODO H3.2
+        return crash(); //TODO H3.2 - remove if implemented
     }
 
     /**

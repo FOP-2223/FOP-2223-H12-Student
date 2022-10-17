@@ -36,7 +36,7 @@ public abstract class MyShape {
      * @throws JSONParseException If the given {@link JSONObject} does not represent a valid shape.
      */
     public static MyShape fromJSON(JSONElement element) throws JSONParseException {
-        return crash(); //TODO H5.2
+        return crash(); //TODO H5.2 - remove if implemented
     }
 
     /**

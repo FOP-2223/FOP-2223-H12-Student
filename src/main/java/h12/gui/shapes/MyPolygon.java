@@ -72,7 +72,7 @@ public class MyPolygon extends MyShape {
      */
     @Override
     public JSONObject toJSON() {
-        return crash(); //TODO H5.1
+        return crash(); //TODO H5.1 - remove if implemented
     }
 
     /**

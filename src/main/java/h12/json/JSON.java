@@ -29,7 +29,7 @@ public class JSON {
      * @throws JSONWriteException If an exception occurs while writing to the JSON file or the {@link #ioFactory} does not support writing.
      */
     public void write(String fileName, JSONElement root) throws JSONWriteException {
-        crash(); //TODO H4.2
+        crash(); //TODO H4.2 - remove if implemented
     }
 
     /**
@@ -40,7 +40,7 @@ public class JSON {
      * @throws JSONParseException If an exception occurs while trying to parse the JSON file or the {@link #ioFactory} does not support reading.
      */
     public JSONElement parse(String fileName) throws JSONParseException {
-        return crash(); //TODO H4.2
+        return crash(); //TODO H4.2 - remove if implemented
     }
 
     /**

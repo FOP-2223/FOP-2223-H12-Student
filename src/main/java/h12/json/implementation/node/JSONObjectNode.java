@@ -43,7 +43,7 @@ public class JSONObjectNode extends JSONNode implements JSONObject {
      */
     @Override
     public void write(BufferedWriter writer, int indentation) throws IOException {
-        crash(); //TODO H2
+        crash(); //TODO H2 - remove if implemented
     }
 
     /**
@@ -98,7 +98,7 @@ public class JSONObjectNode extends JSONNode implements JSONObject {
          */
         @Override
         public void write(BufferedWriter writer, int indentation) throws IOException {
-            crash(); //TODO H2
+            crash(); //TODO H2 - remove if implemented
         }
 
         /**

@@ -34,7 +34,7 @@ public class LoadCanvasHandler extends FileOperationHandler {
      * Shows a {@link JFileChooser} dialog to the user and tries to load the canvas stored in the selected file.
      */
     public void load() {
-        crash(); //TODO H5.5
+        crash(); //TODO H5.5 - remove if implemented
     }
 
     /**
@@ -44,7 +44,7 @@ public class LoadCanvasHandler extends FileOperationHandler {
      * @throws JSONParseException If the json file does not describe a valid canvas.
      */
     public void canvasFromJSONElement(JSONElement element) throws JSONParseException {
-        crash(); //TODO H5.5
+        crash(); //TODO H5.5 - remove if implemented
     }
 
     /**

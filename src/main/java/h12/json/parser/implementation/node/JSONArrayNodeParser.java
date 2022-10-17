@@ -46,7 +46,7 @@ public class JSONArrayNodeParser implements JSONNodeParser {
      */
     @Override
     public JSONArrayNode parse() throws IOException, JSONParseException {
-        return crash(); //TODO H3.3
+        return crash(); //TODO H3.3 - remove if implemented
     }
 
 }
