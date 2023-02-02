@@ -130,6 +130,8 @@ public class ContentPanel extends JPanel {
         @Override
         public void mouseMoved(MouseEvent e) {
             mf.getInteraction().update(e.getX(), e.getY());
+            mf.getControlPanel().getCoordinates().setText("x: %d y: %d".formatted(e.getX(), e.getY()));
+
 
             revalidate();
             repaint();
