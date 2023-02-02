@@ -20,6 +20,7 @@ public class ControlPanel extends JPanel {
 
     private final ColorSelectorButtons colorSelectorButtons;
 
+    private final JLabel coordinates;
     /**
      * Creates a new {@link ControlPanel}-Instance.
      *
@@ -29,8 +30,10 @@ public class ControlPanel extends JPanel {
         this.mf = mf;
 
         this.colorSelectorButtons = new ColorSelectorButtons();
+        this.coordinates = new JLabel();
 
         add(new ControlButtons());
+        add(coordinates);
         add(colorSelectorButtons);
         add(new ShapeSelector());
     }
@@ -60,6 +63,15 @@ public class ControlPanel extends JPanel {
      */
     public MainFrame getMainFrame() {
         return mf;
+    }
+   
+    /**
+     * Returns the {@link JLabel} that displays the mouse coordinates.
+     * @return the {@link JLabel} that displays the mouse coordinates.
+     */
+
+    public JLabel getCoordinates() {
+        return coordinates;
     }
 
     /**
