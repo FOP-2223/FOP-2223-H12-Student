@@ -147,8 +147,6 @@ public class ContentPanel extends JPanel {
         Rectangle bounds = shape.getBounds();
         AffineTransform transformation = new AffineTransform();
         transformation.translate(getWidth() - bounds.width - 10, getHeight() - bounds.height);
-        System.out.println(getHeight());
-        System.out.println(getWidth());
         return transformation.createTransformedShape(shape);
     }
 
