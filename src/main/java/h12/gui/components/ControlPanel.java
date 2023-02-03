@@ -19,7 +19,7 @@ public class ControlPanel extends JPanel {
     private final MainFrame mf;
 
     private final ColorSelectorButtons colorSelectorButtons;
-    
+
     /**
      * Creates a new {@link ControlPanel}-Instance.
      *
