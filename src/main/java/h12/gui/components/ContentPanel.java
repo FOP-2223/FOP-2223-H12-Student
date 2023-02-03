@@ -32,7 +32,6 @@ public class ContentPanel extends JPanel {
 
         setBackground(Color.WHITE);
         setBorder(BorderFactory.createEtchedBorder());
-        setLayout(new BorderLayout());
 
         addMouseListener(new MouseInteractionHandler());
         addMouseMotionListener(new MouseMotionHandler());
