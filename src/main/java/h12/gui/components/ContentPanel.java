@@ -18,6 +18,8 @@ public class ContentPanel extends JPanel {
 
     private final MainFrame mf;
     private final List<MyShape> shapes = new ArrayList<>();
+    
+    private final JLabel coordinates = new JLabel("x: -- y: --");
 
     /**
      * Creates a new {@link ContentPanel}-Instance.
@@ -30,10 +32,21 @@ public class ContentPanel extends JPanel {
 
         setBackground(Color.WHITE);
         setBorder(BorderFactory.createEtchedBorder());
+        setLayout(new BorderLayout());
 
         addMouseListener(new MouseInteractionHandler());
 
         addMouseMotionListener(new MouseMotionHandler());
+        
+        coordinates.setOpaque(true);
+        coordinates.setBorder(BorderFactory.createEtchedBorder());
+
+        JPanel bottomPanel = new JPanel(new BorderLayout());
+        bottomPanel.setBackground(Color.WHITE);
+        bottomPanel.add(coordinates, BorderLayout.LINE_END);
+        bottomPanel.setOpaque(false);
+
+        add(bottomPanel,BorderLayout.SOUTH);
     }
 
     /**
@@ -130,8 +143,7 @@ public class ContentPanel extends JPanel {
         @Override
         public void mouseMoved(MouseEvent e) {
             mf.getInteraction().update(e.getX(), e.getY());
-            mf.getControlPanel().getCoordinates().setText("x: %d y: %d".formatted(e.getX(), e.getY()));
-
+            coordinates.setText("x: %d y: %d".formatted(e.getX(), e.getY()));
 
             revalidate();
             repaint();
