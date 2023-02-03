@@ -5,9 +5,9 @@ import h12.gui.shapes.MyShape;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+import java.awt.event.*;
+import java.awt.font.GlyphVector;
+import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +18,8 @@ public class ContentPanel extends JPanel {
 
     private final MainFrame mf;
     private final List<MyShape> shapes = new ArrayList<>();
+
+    private Shape coordinates;
 
     /**
      * Creates a new {@link ContentPanel}-Instance.
@@ -32,8 +34,18 @@ public class ContentPanel extends JPanel {
         setBorder(BorderFactory.createEtchedBorder());
 
         addMouseListener(new MouseInteractionHandler());
-
         addMouseMotionListener(new MouseMotionHandler());
+
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                coordinates = createTextShape("x: --  y: --");
+                ContentPanel.this.revalidate();
+                ContentPanel.this.repaint();
+            }
+        });
+
+        coordinates = createTextShape("x: --  y: --");
     }
 
     /**
@@ -52,6 +64,10 @@ public class ContentPanel extends JPanel {
         for (MyShape shape : shapes) {
             shape.draw(g2d);
         }
+
+        g2d.setColor(Color.black);
+        g2d.fill(coordinates);
+
     }
 
     /**
@@ -118,6 +134,23 @@ public class ContentPanel extends JPanel {
     }
 
     /**
+     * Converts the given text into a {@link Shape}.
+     * By default, the created {@link Shape} will be positioned in the bottom left corner of this {@link JPanel}.
+     *
+     * @param text The text to convert.
+     * @return A {@link Shape} in the form of the outline of the given text.
+     */
+    private Shape createTextShape(String text) {
+        Font font = getFont().deriveFont(Font.PLAIN, 13);
+        GlyphVector glyphVector = font.createGlyphVector(getFontMetrics(font).getFontRenderContext(), text);
+        Shape shape = glyphVector.getOutline();
+        Rectangle bounds = shape.getBounds();
+        AffineTransform transformation = new AffineTransform();
+        transformation.translate(getWidth() - bounds.width - 10, getHeight() - bounds.height);
+        return transformation.createTransformedShape(shape);
+    }
+
+    /**
      * An inner class for handling a movement of the mouse.
      */
     private class MouseMotionHandler extends MouseMotionAdapter {
@@ -130,6 +163,7 @@ public class ContentPanel extends JPanel {
         @Override
         public void mouseMoved(MouseEvent e) {
             mf.getInteraction().update(e.getX(), e.getY());
+            coordinates = createTextShape("x: %d y: %d".formatted(e.getX(), e.getY()));
 
             revalidate();
             repaint();
